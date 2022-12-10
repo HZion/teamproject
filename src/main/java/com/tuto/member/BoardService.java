@@ -1,4 +1,4 @@
-package com.tuto;
+package com.tuto.member;
 import  java.util.List;
 
 public interface BoardService {

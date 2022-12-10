@@ -1,7 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@page import="com.tuto.BoardDAO, com.tuto.BoardVO"%>
+ <%@page import="com.tuto.member.BoardDAO, com.tuto.member.BoardVO"%>
 
 <!DOCTYPE html>
 <html>
