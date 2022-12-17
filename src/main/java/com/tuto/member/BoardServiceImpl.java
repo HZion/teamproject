@@ -9,24 +9,24 @@ public class BoardServiceImpl implements BoardService{
  @Autowired
  BoardDAO boardDAO;
 
-    public int insertBoard(BoardVO vo) {
-        return boardDAO.insertBoard(vo);
+    public int insertGwamog(BoardVO vo) {
+        return boardDAO.insertGwamog(vo);
     }
 
-    public int deleteBoard(int seq) {
-        return boardDAO.deletBoard(seq);
+    public int deleteGwamog(int seq) {
+        return boardDAO.deletGwamog(seq);
     }
 
-    public int updateBoard(BoardVO vo) {
-        return boardDAO.updateBoard(vo);
+    public int updateGwamog(BoardVO vo) {
+        return boardDAO.updateGwamog(vo);
     }
 
-    public BoardVO getBoard(int seq) {
-        return boardDAO.getBoard(seq);
+    public BoardVO getGwamog(int seq) {
+        return boardDAO.getGwamog(seq);
     }
 
-    public List<BoardVO> getBoardList() {
-        return boardDAO.getBoardList();
+    public List<BoardVO> getGwamogList() {
+        return boardDAO.getGwamogList();
     }
 
 }

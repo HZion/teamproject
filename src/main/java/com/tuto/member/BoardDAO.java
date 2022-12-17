@@ -1,4 +1,5 @@
 package com.tuto.member;
+import com.tuto.*;
 
 import java.util.List;
 
@@ -11,26 +12,26 @@ public class BoardDAO {
     @Autowired
     SqlSession sqlSession;
 
-    public int insertBoard(BoardVO vo){
-        int result = sqlSession.insert("Board.insertBoard",vo);
+    public int insertGwamog(BoardVO vo){
+        int result = sqlSession.insert("Gwamog.insertGwamog",vo);
         return result;
     }
-    public int deletBoard(int seq){
-        int result = sqlSession.delete("Board.deletBoard",seq);
-        return result;
-
-    }
-    public int updateBoard(BoardVO vo){
-        int result = sqlSession.update("Board.updateBoard", vo);
+    public int deletGwamog(int seq){
+        int result = sqlSession.delete("Gwamog.deleteGwamog",seq);
         return result;
 
     }
-    public BoardVO getBoard(int seq){
-        BoardVO result = sqlSession.selectOne("Board.getBoard", seq);
+    public int updateGwamog(BoardVO vo){
+        int result = sqlSession.update("Gwamog.updateGwamog", vo);
+        return result;
+
+    }
+    public BoardVO getGwamog(int seq){
+        BoardVO result = sqlSession.selectOne("Gwamog.getGwamog", seq);
         return result;
     }
-    public List<BoardVO> getBoardList(){
-        List<BoardVO> list = sqlSession.selectList("Board.getBoardList");
+    public List<BoardVO> getGwamogList(){
+        List<BoardVO> list = sqlSession.selectList("Gwamog.getGwamogList");
         return list;
     }
 

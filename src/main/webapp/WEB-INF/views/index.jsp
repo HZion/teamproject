@@ -10,7 +10,7 @@
     Hellow World!
 </h1>
 
-<P><a href="/board/list">게시판으로 이동</a></P>
-<P><a href="/login/logout">로그아웃</a></P>
+<P><a href="/p3_21500772_1/board/list">게시판으로 이동</a></P>
+<P><a href="/p3_21500772_1/login/logout">로그아웃</a></P>
 </body>
 </html>

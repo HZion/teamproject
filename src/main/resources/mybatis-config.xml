@@ -4,7 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias alias="board" type="com.tuto.member.BoardVO" />
-
+        <typeAlias alias="gwamog" type="com.tuto.member.BoardVO" />
     </typeAliases>
 </configuration>

@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class HomeController {
-    //BoardService boardService;
+
 
     @Autowired
     BoardService boardService;
@@ -22,7 +24,7 @@ public class HomeController {
 
     @RequestMapping(value = "/board/list", method =  RequestMethod.GET)
     public String boardlist(Model model){
-        model.addAttribute("lists",boardService.getBoardList());
+        model.addAttribute("lists",boardService.getGwamogList());
         return "list";
     }
     @RequestMapping(value =  "/board/add", method = RequestMethod.GET)
@@ -32,7 +34,7 @@ public class HomeController {
 
     @RequestMapping(value =  "/board/addok", method = RequestMethod.POST)
     public String addPostOk(BoardVO vo){
-        if(boardService.insertBoard(vo)==0)
+        if(boardService.insertGwamog(vo)==0)
             System.out.println("데이터 추가 실패");
         else
             System.out.println("데이터 추가 성공");
@@ -41,13 +43,13 @@ public class HomeController {
     }
     @RequestMapping(value = "/board/editform/{id}", method = RequestMethod.GET)
     public String editPost(@PathVariable("id")int id, Model model){
-        BoardVO boardVO = boardService.getBoard(id);
+        BoardVO boardVO = boardService.getGwamog(id);
         model.addAttribute("boardVO",boardVO);
         return "editform";
     }
     @RequestMapping(value ="/board/editok", method = RequestMethod.POST)
         public String editPostOk(BoardVO vo){
-            if(boardService.updateBoard(vo)== 0){
+            if(boardService.updateGwamog(vo)== 0){
                 System.out.println("데이터 수정 실패");
         }
             else{
@@ -57,12 +59,17 @@ public class HomeController {
     }
     @RequestMapping(value ="/board/deleteok/{id}", method = RequestMethod.GET)
         public String deletePostOk(@PathVariable("id") int id) {
-        if (boardService.deleteBoard(id) == 0)
+        if (boardService.deleteGwamog(id) == 0)
             System.out.println("데이터삭제 실패");
         else
             System.out.println("데이터삭제 성공");
 
         return "redirect:../list";
         }
+    @RequestMapping(value="/signup")
+    public String signup(HttpSession session) {
+        session.invalidate();
+        return "edituser";
+    }
 
 }

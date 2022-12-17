@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Board">
-    <insert id="insertBoard">
-        insert into BOARD ( title, writer, content)
-        values
-            (#{title} , #{writer} , #{content})
+<mapper namespace="Gwamog">
+    <insert id="insertGwamog">
+        insert into GWAMOG ( subject,subject_code, sesssion, grade, isE, comment)
+        values(#{subject},#{subject_code},#{sesssion},#{grade},#{isE},#{comment})
     </insert>
-    <update id="updateBoard">
-        update BOARD
-        set title=#{title}, content=#{content}, writer=#{writer}
+    <update id="updateGwamog">
+        update GWAMOG
+        set subject=#{subject},subject_code=#{subject_code}, sesssion= #{sesssion}, grade=#{grade}, isE=#{isE}, comment=#{comment}
         where seq=#{seq}
     </update>
-    <delete id="deleteBoard">
-        delete from BOARD where seq=#{seq}
+    <delete id="deleteGwamog">
+        delete from GWAMOG where seq=#{seq}
     </delete>
-    <select id="getBoard" resultType="board">
-        select * from BOARD where seq=#{seq}
+    <select id="getGwamog" resultType="Gwamog">
+        select * from GWAMOG where seq=#{seq}
     </select>
-    <select id="getBoardList" resultType="board">
-        select * from BOARD order by seq desc
+    <select id="getGwamogList" resultType="Gwamog">
+        select * from GWAMOG order by seq desc
     </select>
 </mapper>
